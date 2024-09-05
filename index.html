@@ -96,6 +96,39 @@
             margin-left: 15px;
             border-radius: 5px;
             object-fit: cover;
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -110,7 +143,7 @@
                         <img src="images/dup.jpg" alt="דופלקס" class="drug-image">
                         <div class="drug-info">
                             <div class="drug-name">דופלקס (Exforge)</div>
-                            <div class="hebrew-name">אמלודיפין-ולסרטן</div>
+                            <div class="hebrew-name">אמלודיפין</div>
                             <div class="drug-purpose">ליתר לחץ דם</div>
                         </div>
                     </li>
@@ -123,9 +156,9 @@
                         </div>
                     </li>
                     <li>
-                        <img src="images/mikrof.jpg" alt="אספירין" class="drug-image">
+                        <img src="images/mikrof.jpg" alt="מיקרופירין" class="drug-image">
                         <div class="drug-info">
-                            <div class="drug-name">ACETYLSALICYLIC ACID 100mg (אספירין)</div>
+                            <div class="drug-name">מיקרופירין (אספירין)</div>
                             <div class="hebrew-name">חומצה אצטילסליצילית</div>
                             <div class="drug-purpose">למניעת קרישי דם</div>
                         </div>
@@ -179,5 +212,33 @@
             </div>
         </div>
     </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.getElementsByClassName('close')[0];
+
+        document.querySelectorAll('.drug-image').forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
