@@ -29,20 +29,22 @@
             padding: 20px 0;
             margin: 0;
             background-color: #f8f8f8;
+            font-size: 24px;
         }
         .schedule {
             display: flex;
-            justify-content: space-around;
+            flex-direction: column;
         }
         .morning, .evening {
-            width: 45%;
-            padding: 20px;
+            width: 100%;
+            padding: 10px;
         }
         h2 {
             color: #fff;
             padding: 10px;
             border-radius: 5px;
             text-align: center;
+            font-size: 20px;
         }
         .morning h2 {
             background-color: #4a90e2;
@@ -57,7 +59,7 @@
         li {
             background-color: #fff;
             margin-bottom: 10px;
-            padding: 15px;
+            padding: 10px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
@@ -69,17 +71,20 @@
         }
         .drug-info {
             flex-grow: 1;
+            margin-right: 10px;
         }
         .drug-name {
             font-weight: bold;
             color: #333;
+            font-size: 16px;
         }
         .hebrew-name {
             font-weight: bold;
             color: #1565c0;
+            font-size: 14px;
         }
         .drug-purpose {
-            font-size: 0.9em;
+            font-size: 12px;
             color: #666;
             margin-top: 5px;
         }
@@ -91,9 +96,8 @@
             color: #d32f2f;
         }
         .drug-image {
-            width: 50px;
-            height: 50px;
-            margin-left: 15px;
+            width: 40px;
+            height: 40px;
             border-radius: 5px;
             object-fit: cover;
             cursor: pointer;
@@ -129,6 +133,34 @@
             color: #bbb;
             text-decoration: none;
             cursor: pointer;
+        }
+        @media screen and (min-width: 768px) {
+            .schedule {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .morning, .evening {
+                width: 45%;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            .drug-name {
+                font-size: 18px;
+            }
+            .hebrew-name {
+                font-size: 16px;
+            }
+            .drug-purpose {
+                font-size: 14px;
+            }
+            .drug-image {
+                width: 50px;
+                height: 50px;
+            }
         }
     </style>
 </head>
