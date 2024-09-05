@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>לוח זמנים לתרופות</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f6d365, #fda085);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 90%;
+            max-width: 800px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px 0;
+            margin: 0;
+            background-color: #f8f8f8;
+        }
+        .schedule {
+            display: flex;
+            justify-content: space-around;
+        }
+        .morning, .evening {
+            width: 45%;
+            padding: 20px;
+        }
+        h2 {
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .morning h2 {
+            background-color: #4a90e2;
+        }
+        .evening h2 {
+            background-color: #9b59b6;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+        }
+        li:hover {
+            transform: translateY(-3px);
+        }
+        .drug-info {
+            flex-grow: 1;
+        }
+        .drug-name {
+            font-weight: bold;
+            color: #333;
+        }
+        .hebrew-name {
+            font-weight: bold;
+            color: #1565c0;
+        }
+        .drug-purpose {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .alloril {
+            background-color: #ffeb3b;
+            border: 2px solid #ffc107;
+        }
+        .alloril .drug-name {
+            color: #d32f2f;
+        }
+        .drug-image {
+            width: 50px;
+            height: 50px;
+            margin-left: 15px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>לוח זמנים יומי לתרופות</h1>
+        <div class="schedule">
+            <div class="morning">
+                <h2>בוקר</h2>
+                <ul>
+                    <li>
+                        <img src="images/dup.jpg" alt="דופלקס" class="drug-image">
+                        <div class="drug-info">
+                            <div class="drug-name">דופלקס (Exforge)</div>
+                            <div class="hebrew-name">אמלודיפין-ולסרטן</div>
+                            <div class="drug-purpose">ליתר לחץ דם</div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/bisopr.jpg" alt="ביסופרולול" class="drug-image">
+                        <div class="drug-info">
+                            <div class="drug-name">BISOPROLOL 5mg (Zebeta)</div>
+                            <div class="hebrew-name">ביסופרולול</div>
+                            <div class="drug-purpose">ליתר לחץ דם ואי ספיקת לב</div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/mikrof.jpg" alt="אספירין" class="drug-image">
+                        <div class="drug-info">
+                            <div class="drug-name">ACETYLSALICYLIC ACID 100mg (אספירין)</div>
+                            <div class="hebrew-name">חומצה אצטילסליצילית</div>
+                            <div class="drug-purpose">למניעת קרישי דם</div>
+                        </div>
+                    </li>
+                    <li class="alloril">
+                        <img src="images/alor.jpg" alt="אלוריל" class="drug-image">
+                        <div class="drug-info">
+                            <div class="drug-name">ALLORIL 100mg (Zyloprim)</div>
+                            <div class="hebrew-name">אלופורינול</div>
+                            <div class="drug-purpose">לגאוט, מוריד חומצה אורית</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="evening">
+                <h2>ערב</h2>
+                <ul>
+                    <li>
+                        <img src="images/tams.jpg" alt="טמסולוסין" class="drug-image">
+                        <div class="drug-info">
+                            <div class="drug-name">TAMSULOSIN 0.4mg (Flomax)</div>
+                            <div class="hebrew-name">טמסולוסין</div>
+                            <div class="drug-purpose">להקלה על הערמונית</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="drug-image">תמונה</div>
+                        <div class="drug-info">
+                            <div class="drug-name">ATORVASTATIN 40MG (Lipitor)</div>
+                            <div class="hebrew-name">אטורבסטטין</div>
+                            <div class="drug-purpose">מוריד כולסטרול, למניעת התקף לב ושבץ</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="drug-image">תמונה</div>
+                        <div class="drug-info">
+                            <div class="drug-name">EZETIMIBE 10mg (Zetia)</div>
+                            <div class="hebrew-name">אזטימיב</div>
+                            <div class="drug-purpose">מוריד כולסטרול, מפחית ספיגה במעיים</div>
+                        </div>
+                    </li>
+                    <li class="alloril">
+                        <img src="images/alor.jpg" alt="אלוריל" class="drug-image">
+                        <div class="drug-info">
+                            <div class="drug-name">ALLORIL 100mg (Zyloprim)</div>
+                            <div class="hebrew-name">אלופורינול</div>
+                            <div class="drug-purpose">לגאוט, מוריד חומצה אורית</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
